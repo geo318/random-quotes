@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+body {
+  font-family:'Quicksand', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+@mixin borderRadius($x,$x1,$x2,$x3){ 
+  -webkit-border-radius: $x $x1 $x2 $x3;
+  -moz-border-radius: $x $x1 $x2 $x3;
+  -ms-border-radius: $x $x1 $x2 $x3;
+  border-radius: $x $x1 $x2 $x3;
+}
+@mixin boxShadow($x, $y, $blur, $c){ 
+  -webkit-box-shadow: $x $y $blur $c;
+  -moz-box-shadow: $x $y $blur $c;
+  -ms-box-shadow: $x $y $blur $c;
+  box-shadow: $x $y $blur $c;
+}
+$clr_tw: #1da1f2;
+* {
+  box-sizing: border-box;
+}
+#quote-box {
+  @include borderRadius(8px,8px,8px,8px);
+  @include boxShadow(2px, 2px, 20px, hsl(0deg 0% 0% / 25%));
+  background-color:#fff;
+  padding:30px;
+  line-height:20px;
+  .fa-angle-double-right {
+    font-size:20px;
+    font-weight:900;
+    padding-right:20px;
+  }
+}
+.tweet-quote{
+  flex-grow:1;
+}
+body {
+   background: linear-gradient(62deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+   animation: gradient 15s ease infinite; 
+   background-size: 400% 400%;
+}
+@-webkit-keyframes gradient{
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+     background-position: 0% 50%;
+  }
+}
+@keyframes gradient{
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+     background-position: 0% 50%;
+  }
+}
+
+.quoteFooter {
+  #tweet-quote {
+    color:#000;
+      i {
+        font-size:15px;
+        padding:5px 8px;
+        color:$clr_tw;
+        border:1px solid $clr_tw;
+        @include borderRadius(8px,8px,8px,8px);
+    }
+  }
+  #author {
+    font-weight:600;
+    margin-right:10px;
+  }
+  .fa-pencil {
+    padding-bottom:2px;
+    border-bottom:1px solid;
+  }
+}
+
+#new-quote {
+  padding:10px;
+  border-radius:4px;
+  border:1px solid #555;
+  background:#fff;
+  &:hover {
+    cursor: pointer;
+     @include boxShadow(2px, 2px, 10px, hsl(0deg 0% 0% / 25%));
+  }
+}
